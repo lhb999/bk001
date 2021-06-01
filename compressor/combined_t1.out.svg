@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='ASCII' standalone='yes'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+  <g>
+    <g transform="translate(100, 100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 200.00185297333297,200.00004818906783 17.071103188578057,382.9289675650241" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 200.00185297333297,200.00004818906783 382.92896756536015,17.071103188914094" id="path1" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g2" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(200.00185297333297,200.00004818906783)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+    <g id="g2" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text2" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan2" sodipodi:role="line">1</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(100, 600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 136.66595217317035,263.33282251460105 256.260794445657,143.7366935860582" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 136.66595217317035,263.33282251460105 17.071033610705825,382.9288979871403" id="path1" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g2" inkscape:connection-end-point="d4"/>
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 263.33182422073264,136.66558773760755 382.92885995092325,17.070995573916225" id="path2" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g1" inkscape:connection-start-point="d4" inkscape:connection-end="#g3" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(136.66595217317035,263.33282251460105)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(263.33182422073264,136.66558773760755)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+    <g id="g2" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text2" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan2" sodipodi:role="line">1</tspan></text>
+    </g>
+    <g id="g3" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text3" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan3" sodipodi:role="line">2</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(100, 1100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 252.51541929618068,191.52464749241878 352.8689233510687,381.16130430297784" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 252.51541929618068,191.52464749241878 19.975662323678833,175.27119508853477" id="path1" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g2" inkscape:connection-end-point="d4"/>
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 252.51541929618068,191.52464749241878 383.9623743746232,17.971642039617265" id="path2" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g3" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(252.51541929618068,191.52464749241878)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(357.5462578885422,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+    <g id="g2" transform="translate(10.0,174.5739424772563)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text2" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan2" sodipodi:role="line">3</tspan></text>
+    </g>
+    <g id="g3" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text3" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan3" sodipodi:role="line">1</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(100, 1600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,390.0 207.07147943836168,207.0678153773202" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 200.00048244293936,199.9966767497208 17.071138628658215,17.070996994363497" id="path1" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g1" inkscape:connection-start-point="d4" inkscape:connection-end="#g2" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(200.00048244293936,199.9966767497208)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+    <g id="g2" transform="translate(10.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text2" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan2" sodipodi:role="line">2</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(100, 2100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">1</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(600, 100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">33</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">39</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(600, 600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">57</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">46</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(600, 1100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">6</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">37</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(600, 1600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">1</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">74</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(600, 2100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">54</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1100, 100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">50</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">52</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1100, 600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">1</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1100, 1100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">69</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">81</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1100, 1600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">71</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">2</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1100, 2100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">82</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">79</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1600, 100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">82</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">1</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1600, 600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">1</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1600, 1100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">3</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">2</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1600, 1600) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">2</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(1600, 2100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">3</tspan></text>
+    </g>
+</g>
+
+</g>
+    <g transform="translate(2100, 100) scale(1 1) "><defs xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="defs3">
+<marker inkscape:stockid="Arrow2Lend0" orient="auto" refY="0.0" refX="0.0" id="Arrow2Lend0" style="overflow:visible;">
+  <path id="pathArrow0" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;fill:black" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)"/>
+</marker>
+</defs>
+<g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:groupmode="layer" id="layer2" inkscape:label="Lines" sodipodi:insensitive="true">
+<path style="fill:none;stroke:black;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" d="M 390.0,10.0 17.071067811865476,382.9289321881345" id="path0" inkscape:connector-type="polyline" inkscape:connector-curvature="0" inkscape:connection-start="#g0" inkscape:connection-start-point="d4" inkscape:connection-end="#g1" inkscape:connection-end-point="d4"/>
+  </g>
+
+  <g xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:label="Nodes" inkscape:groupmode="layer" id="layer1">
+  <!-- Vertices -->
+    <g id="g0" transform="translate(390.0,10.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text0" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan0" sodipodi:role="line">2</tspan></text>
+    </g>
+    <g id="g1" transform="translate(10.0,390.0)">
+     <circle cx="0" cy="0" r="10" fill="red"/>
+      <text sodipodi:linespacing="125%" y="5.0" x="0" id="text1" style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+<tspan y="5.0" x="0" id="tspan1" sodipodi:role="line">1</tspan></text>
+    </g>
+</g>
+
+</g>
+  </g>
+  <g>
+    <text x="100" y="550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 226 times</text>
+    <text x="100" y="1050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 6 times</text>
+    <text x="100" y="1550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 5 times</text>
+    <text x="100" y="2050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 2 times</text>
+    <text x="100" y="2550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 63 times</text>
+    <text x="600" y="550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="600" y="1050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="600" y="1550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="600" y="2050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 4 times</text>
+    <text x="600" y="2550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1100" y="550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1100" y="1050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 69 times</text>
+    <text x="1100" y="1550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1100" y="2050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 2 times</text>
+    <text x="1100" y="2550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1600" y="550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1600" y="1050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1600" y="1550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1600" y="2050.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 1 times</text>
+    <text x="1600" y="2550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 94 times</text>
+    <text x="2100" y="550.0" font-size="25" font-family="Verdana" font-weight="bold" letter-spacing="0" text-anchor="start" fill="black">Appeared 87 times</text>
+  </g>
+</svg>
