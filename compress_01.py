@@ -11,9 +11,9 @@ try:
     import cPickle as pickle
 except:
     import pickle
-
 from igraph import Graph
 import pyfpgrowth
+from itertools import chain
 # from .visualize import visualize_separate, visualize_grid
 
 class Compressor2:
@@ -32,7 +32,7 @@ class Compressor2:
         self._expanded_pattern_list = []
         self._time_stamp = 0
         self._pattern_from = {}
-
+        self._pattern_id_inc = 0
 
         # Max dictionary size. If we go over size, keep only the top patterns
         self.dict_size = dict_size
@@ -73,16 +73,23 @@ class Compressor2:
             self._expanded_pattern_list.append(tmp_p)
 
     def pattern_pruner(self):
+        # 패턴 관리
         transactions = self._expanded_pattern_list[1:]
-        patterns = pyfpgrowth.find_frequent_patterns(transactions, 3)
+        # 아래 부분 조절하여 prun ..
+        patterns = pyfpgrowth.find_frequent_patterns(transactions, 2)
         rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
-
+        unnested = list(chain.from_iterable(rules))
+        parsed_list = list(map(lambda x: x[:1][0], self.P))
+        inter_section = list(set(unnested) & set(parsed_list))
+        filtered = list(filter(lambda x: inter_section.__contains__(x[:1][0]), self.P))
+        return filtered
 
     def save_state(self, fout):
         """ Save the compressor state as a pickle file
         Object format is:
           (_compress_count,_lines_read,_dict_trimmed,P)
         """
+
         with open(fout, 'wb') as pickle_file:
             pickle.dump((self._compress_count,
                          self._lines_read,
@@ -119,16 +126,66 @@ class Compressor2:
             # Should be faster than `self.P = self.P[:self.dict_size]'
             del self.P[self.dict_size:]
 
+    def update_dictionary_idx(self, pattern, pi):
+        """ Update the pattern dictionary with a new graph
+        Iterate through the pattern dictionary:
+            If the pattern already exists, update its counter
+            Otherwise, add the new pattern to the dictionary
+        """
+        # j = 이전
+        c2 = pattern.vs['label']
+        c2_edge = pattern.es['label']
+
+        for i, (pid, graph, count, score) in enumerate(self.P):
+            # 이미 존재하는 패턴일 때
+            c1 = graph.vs['label']
+            c1_edge = graph.es['label']
+
+            if len(c1) != len(c2) or len(c1_edge) != len(c2_edge):
+                continue
+
+            if graph.isomorphic_vf2(pattern,
+                                    color1=c1, color2=c2,
+                                    edge_color1=c1_edge, edge_color2=c2_edge):
+                # match found, update counter and score
+                new_count = count+1
+                # self.append_expanded_pattern(pid, pi)
+                new_score = self.get_score(graph, new_count)
+                pattern_from = self._pattern_from[pid]
+                tmp_path = [self._time_stamp,pattern_from, pid]
+                self._expanded_pattern_list.append(tmp_path)
+                # print(f"{pattern_from} -> {pid}")
+                self.P[i] = (pid, graph, new_count, new_score)
+                return
+
+        self.trim_dictionary()
+
+        # If pattern is not in dictionary, add it
+        count = 1
+        score = self.get_score(pattern, count)
+
+        current_pattern_id = self._pattern_id_inc
+
+        self._pattern_from[current_pattern_id] = pi
+        # print(f"{pi} -> {current_pattern_id}")
+        self.append_expanded_pattern(pi, current_pattern_id)
+        self.P.append((current_pattern_id, pattern, count, score))
+        self._pattern_id_inc += 1
+        # self.P.append((pattern, count, score))
+
+
     def update_dictionary(self, pattern):
         """ Update the pattern dictionary with a new graph
         Iterate through the pattern dictionary:
             If the pattern already exists, update its counter
             Otherwise, add the new pattern to the dictionary
         """
+        # j = 이전
         c2 = pattern.vs['label']
         c2_edge = pattern.es['label']
 
-        for i, (graph, count, score) in enumerate(self.P):
+        for i, (pid, graph, count, score) in enumerate(self.P):
+            # 이미 존재하는 패턴일 때
             c1 = graph.vs['label']
             c1_edge = graph.es['label']
 
@@ -140,41 +197,9 @@ class Compressor2:
                                     edge_color1=c1_edge, edge_color2=c2_edge):
                 # match found, update counter and score
                 new_count = count+1
+                # self.append_expanded_pattern(pid, pi)
                 new_score = self.get_score(graph, new_count)
-                self.P[i] = (graph, new_count, new_score)
-                return
-
-        self.trim_dictionary()
-
-        # If pattern is not in dictionary, add it
-        count = 1
-        score = self.get_score(pattern, count)
-        self.P.append((pattern, count, score))
-
-    def update_dictionary_idx(self, pattern, j, k):
-        """ Update the pattern dictionary with a new graph
-        Iterate through the pattern dictionary:
-            If the pattern already exists, update its counter
-            Otherwise, add the new pattern to the dictionary
-        """
-        c2 = pattern.vs['label']
-        c2_edge = pattern.es['label']
-
-        for i, (graph, count, score) in enumerate(self.P):
-            c1 = graph.vs['label']
-            c1_edge = graph.es['label']
-
-            if len(c1) != len(c2) or len(c1_edge) != len(c2_edge):
-                continue
-
-            if graph.isomorphic_vf2(pattern,
-                                    color1=c1, color2=c2,
-                                    edge_color1=c1_edge, edge_color2=c2_edge):
-                # match found, update counter and score
-                new_count = count+1
-                self.append_expanded_pattern(j, i)
-                new_score = self.get_score(graph, new_count)
-                self.P[i] = (graph, new_count, new_score)
+                self.P[i] = (pid, graph, new_count, new_score)
                 return
 
         self.trim_dictionary()
@@ -183,10 +208,10 @@ class Compressor2:
         count = 1
         score = self.get_score(pattern, count)
 
-        self._pattern_from[k] = j
-        self.append_expanded_pattern(j, k)
-
-        self.P.append((pattern, count, score))
+        current_pattern_id = self._pattern_id_inc
+        self.P.append((current_pattern_id, pattern, count, score))
+        self._pattern_id_inc += 1
+        # self.P.append((pattern, count, score))
 
 
     def iterate_batch(self, G_batch):
@@ -201,7 +226,7 @@ class Compressor2:
         new_patterns = []
 
         # For each pattern-graph p in P
-        for i, (p, c, s) in enumerate(self.P):
+        for i, (pid, p, c, s) in enumerate(self.P):
 
             # Get all subgraphs matching pattern p in the batch's graph
             if self.match_strict:
@@ -309,13 +334,12 @@ class Compressor2:
 
                 # Add the new pattern to the dictionary
                 if p_new is not None:
-                    target_idx = len(self.P)
-                    new_patterns.append((p_new, i, target_idx))
+                    new_patterns.append((p_new, pid))
                     # new_patterns.append(p_new)
 
-        for (g, i, j) in new_patterns:
+        for (g, ii) in new_patterns:
             # self.update_dictionary(g)
-            self.update_dictionary_idx(g, i, j)
+            self.update_dictionary_idx(g, ii)
 
         # Add remaining edges in B as single-edge patterns in P
         for e in G_batch.es:
@@ -345,7 +369,7 @@ class Compressor2:
                 line_count += 1
                 if (line_count % 1000 == 0):
                     print("Read %d lines (%d edges) from %s" %
-                          (line_count, edge_count, fin), file=stderr, end='\r')
+                          (line_count, edge_count, fin), file=stderr, end='\n')
                 if line[0] == 'e':
                     edge_count += 1
 
@@ -356,6 +380,8 @@ class Compressor2:
                 if (edge_count == 0 or (edge_count % self.batch_size) != 0):
                     continue
 
+                print(f"Continue Process => line: {line_count}, edge count: {edge_count} time stamp: {self._time_stamp}")
+                self.P = self.pattern_pruner()
                 # Processed the batch, then create a fresh stream object/graph
                 self.iterate_batch(G_batch)
                 self._time_stamp += 1
@@ -461,12 +487,15 @@ class Compressor2:
     #     visualize_separate(fout, self.P, n)
 
 file7 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
+file8 = 'data/SUBGEN/4PATH/100K.graph'
+file9 = 'data/SUBGEN/4PATH/10K.graph'
 
 
-comp4 = Compressor2(batch_size=30, dict_size=20)
-comp4.compress_file(file7)
+comp4 = Compressor2(batch_size=100, dict_size=20)
+comp4.compress_file(file9)
 
 # 첫번째 원소는 timestamp 의미함
-# transactions = comp4._expanded_pattern_list[1:]
-# patterns = pyfpgrowth.find_frequent_patterns(transactions, 3)
-# rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
+transactions = comp4._expanded_pattern_list[1:]
+patterns = pyfpgrowth.find_frequent_patterns(transactions, 3)
+rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
+
