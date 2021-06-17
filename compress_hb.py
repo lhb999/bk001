@@ -7,6 +7,9 @@ from sys import stderr
 from pandas.util import hash_pandas_object
 import pyfpgrowth
 import logging
+import traceback
+logging.getLogger().setLevel(logging.DEBUG)
+
 # try:
 #     import cPickle as pickle
 # except:
@@ -293,8 +296,6 @@ class Compressor:
                 counter += 1
                 # Extend the pattern by "one degree/layer" as p_new
                 p_new = None
-                print("========================= new p =========================")
-
                 # respective vertex indices for the mappings
                 # e.g.
                 # p_v: 0, 1, 2, 3, 4, 5, ...
@@ -371,14 +372,13 @@ class Compressor:
 
                             # self.print_graph_edges(p.es)
                             # print("--")
-                            print(f"\n{pv_source_index} -> {pv_target_index}")
+                            # print(f"\n{pv_source_index} -> {pv_target_index}")
 
-                            for key in Gv_to_pv.keys():
-                                print("[", key, "]:[", Gv_to_pv[key], "]")
+                            # for key in Gv_to_pv.keys():
+                            #     print("[", key, "]:[", Gv_to_pv[key], "]")
 
-                            print(p)
-
-                            self.print_vertexes(p.vs)
+                            # print(p)
+                            # self.print_vertexes(p.vs)
                             try:
                                 if not p.are_connected(pv_source_index, pv_target_index):
                                     # print("not connected")
@@ -388,9 +388,9 @@ class Compressor:
                                                        pv_source_index,
                                                        pv_target_index,
                                                        label=Ge['label'])
-                            except Exception:
-                                print(Exception)
-                                print("!! ERROR !!")
+                            except Exception as e:
+                                print(repr(e))
+                                traceback.print_exc()
                                 print(Gv_to_pv)
                                 print(f"1 >>> {Gv_source_index} => {pv_source_index}")
                                 print(f"2 >>> {Gv_target_index} => {pv_target_index}")
@@ -405,7 +405,7 @@ class Compressor:
                 if p_new is not None:
                     # print(f"new pattern size -> {len(p_new.vs)}")
                     # 여기에 Src Idx to Tgt Idx 추가
-                    target_idx = len(self.P) + 1
+                    target_idx = len(self.P)
                     # tmp_p = [self._time_stamp, i, target_idx]
                     # self._pattern_list.append(tmp_p)
                     # print(f">>>  {i} -> {target_idx}")
