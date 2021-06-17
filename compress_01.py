@@ -74,6 +74,7 @@ class Compressor2:
 
     def pattern_pruner(self):
         # 패턴 관리
+        check1 = self.P.__len__()
         transactions = self._expanded_pattern_list[1:]
         # 아래 부분 조절하여 prun ..
         patterns = pyfpgrowth.find_frequent_patterns(transactions, 2)
@@ -82,6 +83,8 @@ class Compressor2:
         parsed_list = list(map(lambda x: x[:1][0], self.P))
         inter_section = list(set(unnested) & set(parsed_list))
         filtered = list(filter(lambda x: inter_section.__contains__(x[:1][0]), self.P))
+        check2 = filtered.__len__()
+        print(f"Pattern Pruned => {check1} -> {check2}")
         return filtered
 
     def save_state(self, fout):
@@ -158,7 +161,7 @@ class Compressor2:
                 self.P[i] = (pid, graph, new_count, new_score)
                 return
 
-        self.trim_dictionary()
+        # self.trim_dictionary()
 
         # If pattern is not in dictionary, add it
         count = 1
@@ -202,7 +205,7 @@ class Compressor2:
                 self.P[i] = (pid, graph, new_count, new_score)
                 return
 
-        self.trim_dictionary()
+        # self.trim_dictionary()
 
         # If pattern is not in dictionary, add it
         count = 1
@@ -381,7 +384,7 @@ class Compressor2:
                     continue
 
                 print(f"Continue Process => line: {line_count}, edge count: {edge_count} time stamp: {self._time_stamp}")
-                self.P = self.pattern_pruner()
+                # self.P = self.pattern_pruner()
                 # Processed the batch, then create a fresh stream object/graph
                 self.iterate_batch(G_batch)
                 self._time_stamp += 1
@@ -498,4 +501,5 @@ comp4.compress_file(file9)
 transactions = comp4._expanded_pattern_list[1:]
 patterns = pyfpgrowth.find_frequent_patterns(transactions, 3)
 rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
+
 
