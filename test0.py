@@ -18,19 +18,19 @@
 32850
 160
 """
-
-hap = [32850, 160]
-don = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
-
-for t in range(len(hap)):
-    tmp_hap = hap[t]
-    print(f"#{t+1}")
-    for d in don:
-        if tmp_hap >= d:
-            v = int(tmp_hap / d)
-            c = tmp_hap % d
-            tmp_hap = c
-            print(f"{v} ", end="")
-        else:
-            print(f"0 ", end="")
-    print()
+#
+# hap = [32850, 160]
+# don = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+#
+# for t in range(len(hap)):
+#     tmp_hap = hap[t]
+#     print(f"#{t+1}")
+#     for d in don:
+#         if tmp_hap >= d:
+#             v = int(tmp_hap / d)
+#             c = tmp_hap % d
+#             tmp_hap = c
+#             print(f"{v} ", end="")
+#         else:
+#             print(f"0 ", end="")
+#     print()

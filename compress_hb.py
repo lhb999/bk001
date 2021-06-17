@@ -6,6 +6,7 @@ from operator import itemgetter
 from sys import stderr
 from pandas.util import hash_pandas_object
 import pyfpgrowth
+import logging
 # try:
 #     import cPickle as pickle
 # except:
@@ -39,7 +40,9 @@ class Compressor:
         self._max_pattern_size = 100
         self._update_call_counter = 0
         self._index_to_path = {}
-        self._pattern_list = []
+        self._expanded_pattern_list = []
+        self._time_stamp = 0
+        self._pattern_from = {}
 
         # Max dictionary size. If we go over size, keep only the top patterns
         self.dict_size = dict_size
@@ -75,11 +78,29 @@ class Compressor:
         # Initialize patterns list P of (graph,count,score) tuples
         self.P = []
 
+    def append_expanded_pattern(self, j, k):
+        if(j != k):
+            tmp_p = [self._time_stamp, j, k]
+            self._expanded_pattern_list.append(tmp_p)
+
     def get_label_idx(self, label):
         if label not in self.label_to_id:
             self.label_to_id[label] = len(self.label_to_id)
         # print(f"label: {label} ==> {self.label_to_id[label]}") # FOR DEBUG
         return self.label_to_id[label]
+
+    def get_or_create_path(self, sp):
+        pf = self._pattern_from
+
+        k = sp
+        if(pf.__contains__(k)):
+            return pf[k]
+            ...
+        else:
+            # print(f"search with : {k}")
+            return k
+            ...
+
 
     def safe_add_edge(self, graph, source, target, **kwds):
         """
@@ -121,6 +142,13 @@ class Compressor:
             # Should be faster than `self.P = self.P[:self.dict_size]'
             del self.P[self.dict_size:]
 
+    def pattern_pruner(self):
+        transactions = self._expanded_pattern_list[1:]
+        patterns = pyfpgrowth.find_frequent_patterns(transactions, 3)
+        rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
+
+        print("TEST")
+
     def update_dictionary(self, pattern):
         self._update_call_counter += 1
         # print(f"update function call counter ==> {self._update_call_counter}")
@@ -134,7 +162,6 @@ class Compressor:
         # 서브그래프 매칭하여 패턴 일치(검색) 수, 점수(그래프 크기 고려) 측정
 
         c2_edge = pattern.es['label']
-        t_i = len(self.P) + 1
 
         for i, (graph, count, score) in enumerate(self.P):
             # c1 = graph.vs['label']
@@ -158,6 +185,47 @@ class Compressor:
         score = self.get_score(pattern, count)
         self.P.append((pattern, count, score))
 
+    def update_dictionary_idx(self, pattern, j, k):
+        self._update_call_counter += 1
+        # print(f"update function call counter ==> {self._update_call_counter}")
+        """ Update the pattern dictionary with a new graph
+        Iterate through the pattern dictionary:
+            If the pattern already exists, update its counter
+            Otherwise, add the new pattern to the dictionary
+        """
+        # pattern -> 그래프
+        # 해당 함수에서는 패턴을 넣는것이 아니라 패턴을 추출한 뒤에
+        # 서브그래프 매칭하여 패턴 일치(검색) 수, 점수(그래프 크기 고려) 측정
+
+        c2_edge = pattern.es['label']
+
+        for i, (graph, count, score) in enumerate(self.P):
+            # c1 = graph.vs['label']
+            c1_edge = graph.es['label']
+
+            if len(c1_edge) != len(c2_edge):
+                continue
+
+            if graph.isomorphic_vf2(pattern):
+                # match found, update counter and score
+                # tmp_p.append(i)
+                new_count = count+1
+                self.append_expanded_pattern(j, i)
+                new_score = self.get_score(graph, new_count)
+                self.P[i] = (graph, new_count, new_score)
+                return
+
+        self.trim_dictionary()
+
+        # If pattern is not in dictionary, add it
+        count = 1
+        score = self.get_score(pattern, count)
+
+        self._pattern_from[k] = j
+        self.append_expanded_pattern(j, k)
+
+        self.P.append((pattern, count, score))
+
     # def add_pattern_fp_growth(self, old_pp, new_pp):
     #     # 현재는 그래프의 ID 를 가지고 키로 사용함 문제 발생 가능성 있음
     #     old_p = id(old_pp)
@@ -176,6 +244,10 @@ class Compressor:
     def print_graph_edges(self, Es):
         for E in Es:
             print(f"{E.tuple} {E.attributes()}")
+
+    def print_vertexes(self, vs):
+        for i in range(len(vs)):
+            print(f"{i} -> {vs[i]}")
 
     def print_graph_patterns(self):
         object_graph = self.P
@@ -221,6 +293,7 @@ class Compressor:
                 counter += 1
                 # Extend the pattern by "one degree/layer" as p_new
                 p_new = None
+                print("========================= new p =========================")
 
                 # respective vertex indices for the mappings
                 # e.g.
@@ -256,27 +329,35 @@ class Compressor:
 
                         if Gv_source_index not in Gv_to_pv:  # not in map
                             # p_new:새로운 패턴을 확장해서 넣어주는부분
+                            # 소스 노드 인덱스가 없을때 만들어서 넣어주는부분
                             if p_new is None:
                                 p_new = p.copy()
+                            # p_new.add_vertex(pv_source_index)
                             pv_target_index = Gv_to_pv[Gv_target_index]
                             pv_source_index = p_new.vcount()
                             Gv_to_pv[Gv_source_index] = pv_source_index
                             # print(f"new edge info 1-> {pv_source_index, pv_target_index}")
-                            p_new.add_vertex(pv_source_index)
-                            p_new.add_edge(pv_source_index,
-                                                pv_target_index,
-                                                label=Ge['label'])
+
+                            # p_new.add_edge(pv_source_index, pv_target_index, label=Ge['label'])
+                            self.safe_add_edge(p_new,
+                                               pv_source_index,
+                                               pv_target_index,
+                                               label=Ge['label'])
                         elif Gv_target_index not in Gv_to_pv:  # not in map
+                            # 타겟 노드 인덱스가 없을때 만들어서 넣어주는부분
                             if p_new is None:
                                 p_new = p.copy()
+                            # p_new.add_vertex(pv_target_index)
                             pv_source_index = Gv_to_pv[Gv_source_index]
                             pv_target_index = p_new.vcount()
-                            Gv_to_pv[Gv_target_index] = Gv_target_index
+                            Gv_to_pv[Gv_target_index] = pv_target_index
                             # print(f"new edge info 2-> {pv_source_index, pv_target_index}")
-                            p_new.add_vertex(Gv_target_index)
-                            p_new.add_edge(pv_source_index,
-                                                pv_target_index,
-                                                label=Ge['label'])
+
+                            # p_new.add_edge(pv_source_index, pv_target_index, label=Ge['label'])
+                            self.safe_add_edge(p_new,
+                                               pv_source_index,
+                                               pv_target_index,
+                                               label=Ge['label'])
 
                         else:  # source index나 target index가 있는경우(=확장가능한경우)
                             pv_source_index = Gv_to_pv[Gv_source_index]
@@ -290,14 +371,29 @@ class Compressor:
 
                             # self.print_graph_edges(p.es)
                             # print("--")
-                            if not p.are_connected(pv_source_index, pv_target_index):
-                                # print("not connected")
-                                if p_new is None:
-                                    p_new = p.copy()
-                                self.safe_add_edge(p_new,
-                                                   pv_source_index,
-                                                   pv_target_index,
-                                                   label=Ge['label'])
+                            print(f"\n{pv_source_index} -> {pv_target_index}")
+
+                            for key in Gv_to_pv.keys():
+                                print("[", key, "]:[", Gv_to_pv[key], "]")
+
+                            print(p)
+
+                            self.print_vertexes(p.vs)
+                            try:
+                                if not p.are_connected(pv_source_index, pv_target_index):
+                                    # print("not connected")
+                                    if p_new is None:
+                                        p_new = p.copy()
+                                    self.safe_add_edge(p_new,
+                                                       pv_source_index,
+                                                       pv_target_index,
+                                                       label=Ge['label'])
+                            except Exception:
+                                print(Exception)
+                                print("!! ERROR !!")
+                                print(Gv_to_pv)
+                                print(f"1 >>> {Gv_source_index} => {pv_source_index}")
+                                print(f"2 >>> {Gv_target_index} => {pv_target_index}")
 
                         # Third possibility is that the edge exists in both the
                         # pattern and the larger (batch) graph (do nothing)
@@ -310,14 +406,16 @@ class Compressor:
                     # print(f"new pattern size -> {len(p_new.vs)}")
                     # 여기에 Src Idx to Tgt Idx 추가
                     target_idx = len(self.P) + 1
-                    tmp_p = [i, target_idx]
-                    self._pattern_list.append(tmp_p)
+                    # tmp_p = [self._time_stamp, i, target_idx]
+                    # self._pattern_list.append(tmp_p)
                     # print(f">>>  {i} -> {target_idx}")
                     # self.add_pattern_fp_growth(p, p_new)
-                    new_patterns.append(p_new)
+                    new_patterns.append((p_new, i, target_idx))
 
-        for g in new_patterns:
-            self.update_dictionary(g)
+                print(f"loop count : {counter}")
+        for (g, i, j) in new_patterns:
+            # self.update_dictionary(g)
+            self.update_dictionary_idx(g, i, j)
 
         # Add remaining edges in B as single-edge patterns in P
         # LOOP 1 => 첫 패턴에서 모든 단일 엣지가 아래에서 입력
@@ -344,7 +442,7 @@ class Compressor:
         # 리플은 문자열을 숫자로 치환하여 사용함 (딕셔너리 사용)
         # timestamp 고려하지않은 상태로 진행
         e_source_id, e_dest_id = raw[0], raw[1]
-        e_label = self.get_label_idx(raw[3])
+        e_label = self.get_label_idx(raw[2])
         try:
             if not G_batch.are_connected(e_source_id, e_dest_id):
                 if self.add_implicit_vertices:
@@ -383,12 +481,17 @@ class Compressor:
 
                 self.parse_line_hb(line, G_batch) # g_batch에 그래프 정보 입력
                 # Only process our "batch" once we've reached a certain size
-                if (edge_count % 4) != 0:
+                if (edge_count % self.batch_size) != 0:
                     continue
+
+                # 이 부분에 패턴 업데이트 하는 알고리즘
+
+                # -------------------------------------
 
                 # Processed the batch, then create a fresh stream object/graph
                 self.iterate_batch(G_batch)
                 G_batch = Graph(directed=self._directed)
+                self._time_stamp += 1
 
             # Process the leftovers (if any)
             if len(G_batch.es) > 0:
@@ -406,10 +509,13 @@ file1 = 'data/50.txt'
 file2 = 'data/1k.txt'
 file3 = 'data/4rec.txt'
 file4 = 'data/10.txt'
+file5 = 'rand.txt'
+file6 = 'data/144.txt'
 
 comp4 = Compressor(batch_size=10, dict_size=10)
-comp4.compress_file_hb(file3)
+comp4.compress_file_hb(file6)
 
-transactions = comp4._pattern_list
+# 첫번째 원소는 timestamp 의미함
+transactions = comp4._expanded_pattern_list[1:]
 patterns = pyfpgrowth.find_frequent_patterns(transactions, 3)
 rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
