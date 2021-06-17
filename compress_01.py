@@ -84,7 +84,7 @@ class Compressor2:
         inter_section = list(set(unnested) & set(parsed_list))
         filtered = list(filter(lambda x: inter_section.__contains__(x[:1][0]), self.P))
         check2 = filtered.__len__()
-        print(f"Pattern Pruned => {check1} -> {check2}")
+        print(f"Pattern Pruned => {check1} -> {transactions.__len__()} -> {check2}")
         return filtered
 
     def save_state(self, fout):
@@ -384,7 +384,8 @@ class Compressor2:
                     continue
 
                 print(f"Continue Process => line: {line_count}, edge count: {edge_count} time stamp: {self._time_stamp}")
-                # self.P = self.pattern_pruner()
+                if(self.P.__len__() >= 1000):
+                    self.P = self.pattern_pruner()
                 # Processed the batch, then create a fresh stream object/graph
                 self.iterate_batch(G_batch)
                 self._time_stamp += 1
