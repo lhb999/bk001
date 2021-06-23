@@ -72,20 +72,49 @@ class Compressor2:
             tmp_p = [self._time_stamp, j, k]
             self._expanded_pattern_list.append(tmp_p)
 
-    def pattern_pruner(self):
-        # 패턴 관리
+    def pattern_score_regularization(self):
+        tmp_p = self.P
+        max_score = max(list(filter(lambda x: x[3] > 0, tmp_p)))[0]
+        print("MAX -> ", max_score)
+        for i, (pid, p, c, s) in enumerate(tmp_p):
+            new_score = round(s / max_score) * 100
+            tmp_p[i] = (pid, p, c, new_score)
+
+    def pattern_score_update_with_FPtree(self, filtered_pattern):
+        for i, (pid, p, c, old_score) in enumerate(filtered_pattern):
+            new_score = old_score + 100
+            filtered_pattern[i] = (pid, p, c, new_score)
+
+    def pattern_score_update_with_timeStamp(self):
+        for (time_stamp, pid1, pid2) in self._expanded_pattern_list:
+            g1 = list(filter(lambda x: (x[1][0] == pid1) or (x[1][0] == pid2), enumerate(self.P)))
+            if g1 is not None:
+                for idx, (pid, g, c, s) in g1:
+                    new_score = s + time_stamp
+                    self.P[idx] = (pid, g, c, new_score)
+
+    def pattern_pruner(self, fp_frequent_factor=2, fp_association_factor=0.5):
+        # SCORE 정규화
+        self.pattern_score_regularization()
+
+        # FP 트리 기반 SCORING
         check1 = self.P.__len__()
         transactions = self._expanded_pattern_list[1:]
-        # 아래 부분 조절하여 prun ..
-        patterns = pyfpgrowth.find_frequent_patterns(transactions, 2)
-        rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
+        patterns = pyfpgrowth.find_frequent_patterns(transactions, fp_frequent_factor)
+        rules = pyfpgrowth.generate_association_rules(patterns, fp_association_factor)
         unnested = list(chain.from_iterable(rules))
         parsed_list = list(map(lambda x: x[:1][0], self.P))
         inter_section = list(set(unnested) & set(parsed_list))
         filtered = list(filter(lambda x: inter_section.__contains__(x[:1][0]), self.P))
         check2 = filtered.__len__()
-        print(f"Pattern Pruned => {check1} -> {transactions.__len__()} -> {check2}")
-        return filtered
+        self.pattern_score_update_with_FPtree(filtered)
+        # 여기까지 FP ~
+        # Time Stamp 기반 Scoring
+        self.pattern_score_update_with_timeStamp()
+        sorted_p = sorted(self.P, key=lambda p: p[3], reverse=True)[0:self.dict_size]
+        print(f"Pattern Pruned => {check1} ->  {sorted_p.__len__()}")
+        # sorted(students, key=lambda student: student[2])
+        return sorted_p
 
     def save_state(self, fout):
         """ Save the compressor state as a pickle file
