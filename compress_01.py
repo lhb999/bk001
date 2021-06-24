@@ -74,8 +74,11 @@ class Compressor2:
 
     def pattern_score_regularization(self):
         tmp_p = self.P
-        max_score = max(list(filter(lambda x: x[3] > 0, tmp_p)))[0]
-        print("MAX -> ", max_score)
+        try:
+            max_score = max(list(filter(lambda x: x[3] > 0, tmp_p)))[0]
+        except Exception as e:
+            max_score = 1
+        # print("MAX -> ", max_score)
         for i, (pid, p, c, s) in enumerate(tmp_p):
             new_score = round(s / max_score) * 100
             tmp_p[i] = (pid, p, c, new_score)
@@ -112,7 +115,7 @@ class Compressor2:
         # Time Stamp 기반 Scoring
         self.pattern_score_update_with_timeStamp()
         sorted_p = sorted(self.P, key=lambda p: p[3], reverse=True)[0:self.dict_size]
-        print(f"Pattern Pruned => {check1} ->  {sorted_p.__len__()}")
+        # print(f"Pattern Pruned => {check1} ->  {sorted_p.__len__()}")
         # sorted(students, key=lambda student: student[2])
         return sorted_p
 
@@ -399,9 +402,9 @@ class Compressor2:
 
             for line in f:
                 line_count += 1
-                if (line_count % 1000 == 0):
-                    print("Read %d lines (%d edges) from %s" %
-                          (line_count, edge_count, fin), file=stderr, end='\n')
+                # if (line_count % 1000 == 0):
+                #     # print("Read %d lines (%d edges) from %s" %
+                #     #       (line_count, edge_count, fin), file=stderr, end='\n')
                 if line[0] == 'e':
                     edge_count += 1
 
@@ -412,8 +415,8 @@ class Compressor2:
                 if (edge_count == 0 or (edge_count % self.batch_size) != 0):
                     continue
 
-                print(f"Continue Process => line: {line_count}, edge count: {edge_count} time stamp: {self._time_stamp}")
-                if(self.P.__len__() >= 1000):
+                # print(f"Continue Process => line: {line_count}, edge count: {edge_count} time stamp: {self._time_stamp}")
+                if(self.P.__len__() >= self.dict_size):
                     self.P = self.pattern_pruner()
                 # Processed the batch, then create a fresh stream object/graph
                 self.iterate_batch(G_batch)
@@ -424,8 +427,8 @@ class Compressor2:
             if len(G_batch.es) > 0:
                 self.iterate_batch(G_batch)
 
-        print("Read %d lines (%d edges) from %s" %  # final count
-              (line_count, edge_count, fin), file=stderr, end='\r')
+        # print("Read %d lines (%d edges) from %s" %  # final count
+        #       (line_count, edge_count, fin), file=stderr, end='\r')
 
         if self.label_history_per_file:
             # Wipe vid->label mapping
@@ -524,12 +527,51 @@ file8 = 'data/SUBGEN/4PATH/100K.graph'
 file9 = 'data/SUBGEN/4PATH/10K.graph'
 
 
-comp4 = Compressor2(batch_size=100, dict_size=20)
-comp4.compress_file(file9)
 
-# 첫번째 원소는 timestamp 의미함
-transactions = comp4._expanded_pattern_list[1:]
-patterns = pyfpgrowth.find_frequent_patterns(transactions, 3)
-rules = pyfpgrowth.generate_association_rules(patterns, 0.5)
+
+def write_dictionary(model, fout=None):
+    """ Print the pattern dictionary in readable .graph format
+    If fout == None, print to stdout
+    Otherwise, write to fout/file
+    """
+    model.P = sorted(model.P, key=itemgetter(2), reverse=True)
+    for i, (pid, g, c, s) in enumerate(model.P):
+        if fout is None:
+            print("%% Pattern %d" % (i + 1))
+            print("%% Score:  %d" % s)
+            print("%% Count:  %d" % c)
+            for i, v in enumerate(g.vs):
+                print("v %d %d" % (i, v['label']))
+            for e in g.es:
+                print("e %d %d %d" % (e.source, e.target, e['label']))
+        else:
+            fout.write("%% Pattern %d\n" % i)
+            fout.write("%% Score:  %d\n" % s)
+            fout.write("%% Count:  %d\n" % c)
+            for i, v in enumerate(g.vs):
+                fout.write("v %d %d\n" % (i, v['label']))
+            for e in g.es:
+                fout.write("e %d %d %d\n" %
+                           (e.source, e.target, e['label']))
+
+import time
+import os
+
+sizes = [5, 7, 10, 12, 14, 16, 18, 20]
+
+# print
+# n, "Bytes"  # 바이트 단
+for size in sizes:
+    start = time.time()  # 시작 시간 저장
+    for test_case in range(5):
+        fname = f"test_a_{size}_{test_case}.out"
+        comp4 = Compressor2(batch_size=200, dict_size=size)
+        comp4.compress_file(file9)
+        with open(fname, 'w') as fout:
+            write_dictionary(comp4, fout)
+    n = os.path.getsize(fname)
+    ttime = round(time.time() - start, 2)
+    # print(f"pattern size: {size}")
+    print(ttime, n)
 
 
