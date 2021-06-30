@@ -19,7 +19,7 @@ from itertools import chain
 class Compressor2:
     """ Parameters and state of the GraphZip model """
 
-    def __init__(self, batch_size=10, dict_size=math.inf, directed=False):
+    def __init__(self, batch_size=10, dict_size=math.inf, directed=True):
         """ Initialize state and set parameters """
         # Should remain constant
         self._directed = directed
@@ -168,19 +168,18 @@ class Compressor2:
             Otherwise, add the new pattern to the dictionary
         """
         # j = 이전
-        c2 = pattern.vs['label']
+        # c2 = pattern.vs['label']
         c2_edge = pattern.es['label']
 
         for i, (pid, graph, count, score) in enumerate(self.P):
             # 이미 존재하는 패턴일 때
-            c1 = graph.vs['label']
+            # c1 = graph.vs['label']
             c1_edge = graph.es['label']
 
-            if len(c1) != len(c2) or len(c1_edge) != len(c2_edge):
+            if len(c1_edge) != len(c2_edge):
                 continue
 
             if graph.isomorphic_vf2(pattern,
-                                    color1=c1, color2=c2,
                                     edge_color1=c1_edge, edge_color2=c2_edge):
                 # match found, update counter and score
                 new_count = count+1
@@ -216,19 +215,19 @@ class Compressor2:
             Otherwise, add the new pattern to the dictionary
         """
         # j = 이전
-        c2 = pattern.vs['label']
+        # c2 = pattern.vs['label']
         c2_edge = pattern.es['label']
 
         for i, (pid, graph, count, score) in enumerate(self.P):
             # 이미 존재하는 패턴일 때
-            c1 = graph.vs['label']
+            # c1 = graph.vs['label']
             c1_edge = graph.es['label']
 
-            if len(c1) != len(c2) or len(c1_edge) != len(c2_edge):
+            # if len(c1) != len(c2) or len(c1_edge) != len(c2_edge):
+            if len(c1_edge) != len(c2_edge):
                 continue
 
             if graph.isomorphic_vf2(pattern,
-                                    color1=c1, color2=c2,
                                     edge_color1=c1_edge, edge_color2=c2_edge):
                 # match found, update counter and score
                 new_count = count+1
@@ -239,7 +238,6 @@ class Compressor2:
 
         # self.trim_dictionary()
 
-        # If pattern is not in dictionary, add it
         count = 1
         score = self.get_score(pattern, count)
 
@@ -269,8 +267,8 @@ class Compressor2:
                     maps = []
                 else:
                     maps = G_batch.get_subisomorphisms_vf2(p,
-                                            color1=G_batch.vs['label'],
-                                            color2=p.vs['label'],
+                                            # color1=G_batch.vs['label'],
+                                            # color2=p.vs['label'],
                                             edge_color1=G_batch.es['label'],
                                             edge_color2=p.es['label'])
             else:
@@ -328,9 +326,10 @@ class Compressor2:
                             # the edge extending to that vertex
                             if p_new is None:
                                     p_new = p.copy()
-                            p_new.add_vertex(label=Gv_source['label'])
+                            # p_new.add_vertex(label=Gv_source['label'])
                             pv_target_index = Gv_to_pv[Gv_target_index]
                             pv_source_index = p_new.vcount()-1
+                            p_new.add_vertex(pv_source_index)
                             p_new.add_edge(pv_source_index,
                                            pv_target_index,
                                            label=Ge['label'])
@@ -338,9 +337,10 @@ class Compressor2:
                         elif Gv_target_index not in Gv_to_pv:  # not in map
                             if p_new is None:
                                 p_new = p.copy()
-                            p_new.add_vertex(label=Gv_target['label'])
+                            # p_new.add_vertex(label=Gv_target['label'])
                             pv_source_index = Gv_to_pv[Gv_source_index]
                             pv_target_index = p_new.vcount()-1
+                            p_new.add_vertex(pv_target_index)
                             p_new.add_edge(pv_source_index,
                                            pv_target_index,
                                            label=Ge['label'])
@@ -383,8 +383,10 @@ class Compressor2:
                 target = G_batch.vs[e.target]
                 single_edge = Graph(directed=self._directed)
                 # Don't need the safe methods here since it's a fresh graph
-                single_edge.add_vertex(label=source['label'])
-                single_edge.add_vertex(label=target['label'])
+                # single_edge.add_vertex(label=source['label'])
+                # single_edge.add_vertex(label=target['label'])
+                single_edge.add_vertex(0)
+                single_edge.add_vertex(1)
                 single_edge.add_edge(0, 1, label=e['label'])
                 self.update_dictionary(single_edge)
 
@@ -442,12 +444,12 @@ class Compressor2:
         try:
             graph.vs.find(name=source)
         except ValueError:
-            graph.add_vertex(source, label=self.vid_to_label[source])
+            graph.add_vertex(source)
 
         try:
             graph.vs.find(name=target)
         except ValueError:
-            graph.add_vertex(target, label=self.vid_to_label[target])
+            graph.add_vertex(target)
 
         # don't add duplicate edges
         if not graph.are_connected(source, target):
@@ -474,43 +476,44 @@ class Compressor2:
             return
 
         # Vertex case
-        if (raw[0] == 'v'):
-            v_id, v_label = raw[1], int(raw[2])
-            self.vid_to_label[v_id] = v_label
+        # if (raw[0] == 'v'):
+        #     v_id, v_label = raw[1], int(raw[2])
+        #     self.vid_to_label[v_id] = v_label
 
         # Edge case
-        elif (raw[0] == 'e' or raw[0] == 'u' or raw[0] == 'd'):
-            e_type = raw[0]  # d=directed, u=undirected, e=directed unless flag
-            e_source_id, e_dest_id, e_label = raw[1], raw[2], int(raw[3])
+        # elif (raw[0] == 'e' or raw[0] == 'u' or raw[0] == 'd'):
+        # e_type = raw[0]  # d=directed, u=undirected, e=directed unless flag
+
+        e_source_id, e_dest_id, e_label = raw[0], raw[1], int(raw[2])
 
             # Don't add an edge if it already exists
-            try:
-                if not G_batch.are_connected(e_source_id, e_dest_id):
-                    # We can only add an edge if the vertices already exist
-                    if self.add_implicit_vertices:
-                        self.safe_add_edge(G_batch,
-                                           e_source_id,
-                                           e_dest_id,
-                                           label=e_label)
-                    else:
-                        G_batch.add_edge(e_source_id,
-                                         e_dest_id,
-                                         label=e_label)
-
-            # Means that one of the vertices DNE (also not connected)
-            except ValueError:
+        try:
+            if not G_batch.are_connected(e_source_id, e_dest_id):
                 # We can only add an edge if the vertices already exist
                 if self.add_implicit_vertices:
                     self.safe_add_edge(G_batch,
-                                       e_source_id, e_dest_id, label=e_label)
+                                       e_source_id,
+                                       e_dest_id,
+                                       label=e_label)
                 else:
-                    print("Error: vertex in line DNE:\n%s" % line_str,
-                          file=stderr)
-                    raise
+                    G_batch.add_edge(e_source_id,
+                                     e_dest_id,
+                                     label=e_label)
 
-        else:
-            # Generic parsing problem
-            raise ValueError("Error: could not parse line:\n%s" % raw)
+        # Means that one of the vertices DNE (also not connected)
+        except ValueError:
+            # We can only add an edge if the vertices already exist
+            if self.add_implicit_vertices:
+                self.safe_add_edge(G_batch,
+                                   e_source_id, e_dest_id, label=e_label)
+            else:
+                print("Error: vertex in line DNE:\n%s" % line_str,
+                      file=stderr)
+                raise
+
+        # else:
+        #     # Generic parsing problem
+        #     raise ValueError("Error: could not parse line:\n%s" % raw)
 
     # XXX Convenience methods
     # XXX Should eventually remove and just use vis. module directly (SRP)
@@ -527,8 +530,7 @@ file8 = 'data/SUBGEN/4PATH/100K.graph'
 file9 = 'data/SUBGEN/4PATH/10K.graph'
 file0 = 'data/SUBGEN/4PATH/10.graph'
 
-
-
+test_data = file9
 
 def write_dictionary(model, fout=None):
     """ Print the pattern dictionary in readable .graph format
@@ -550,7 +552,7 @@ def write_dictionary(model, fout=None):
             fout.write("%% Score:  %d\n" % s)
             fout.write("%% Count:  %d\n" % c)
             for i, v in enumerate(g.vs):
-                fout.write("v %d %d\n" % (i, v['label']))
+                fout.write("v %d \n" % i)
             for e in g.es:
                 fout.write("e %d %d %d\n" %
                            (e.source, e.target, e['label']))
@@ -559,15 +561,16 @@ import time
 import os
 
 sizes = [5]
+loop = 1
 
 # print
 # n, "Bytes"  # 바이트 단
 for size in sizes:
     start = time.time()  # 시작 시간 저장
-    for test_case in range(5):
+    for test_case in range(loop):
         fname = f"test_a_{size}_{test_case}.out"
         comp4 = Compressor2(batch_size=200, dict_size=size)
-        comp4.compress_file(file9)
+        comp4.compress_file(test_data)
         with open(fname, 'w') as fout:
             write_dictionary(comp4, fout)
     n = os.path.getsize(fname)
