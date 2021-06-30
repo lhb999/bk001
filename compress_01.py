@@ -525,6 +525,7 @@ class Compressor2:
 file7 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
 file8 = 'data/SUBGEN/4PATH/100K.graph'
 file9 = 'data/SUBGEN/4PATH/10K.graph'
+file0 = 'data/SUBGEN/4PATH/10.graph'
 
 
 
@@ -557,7 +558,7 @@ def write_dictionary(model, fout=None):
 import time
 import os
 
-sizes = [5, 7, 10, 12, 14, 16, 18, 20]
+sizes = [5]
 
 # print
 # n, "Bytes"  # 바이트 단
