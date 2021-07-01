@@ -180,7 +180,7 @@ class Compressor2:
         size = len(graph.es)
         return (size-1) * (count-1)
 
-    def trim_dictionary(self, threshold_multiplier=2):
+    def trim_dictionary_nn(self, threshold_multiplier=2):
         """ Trim pattern dictionary to theta if size > multiplier*theta
         By default, the multiplier is set to 2, so the dictionary is trimmed to
         size theta when it exceeds size 2*theta
@@ -190,6 +190,10 @@ class Compressor2:
             self.P = sorted(self.P, key=itemgetter(2), reverse=True)
             # Should be faster than `self.P = self.P[:self.dict_size]'
             del self.P[self.dict_size:]
+
+    def trim_dictionary(self):
+        if len(self.P) > self.dict_size:
+            self.P = self.pattern_pruner()
 
     def update_dictionary_idx(self, pattern, pi):
         """ Update the pattern dictionary with a new graph
@@ -216,13 +220,14 @@ class Compressor2:
                 # self.append_expanded_pattern(pid, pi)
                 new_score = self.get_score(graph, new_count)
                 pattern_from = self._pattern_from[pid]
-                tmp_path = [self._time_stamp,pattern_from, pid]
+                tmp_path = [self._time_stamp, pattern_from, pid]
                 self._expanded_pattern_list.append(tmp_path)
                 # print(f"{pattern_from} -> {pid}")
                 self.P[i] = (pid, graph, new_count, new_score)
                 return
 
         # self.trim_dictionary()
+        self.trim_dictionary_nn()
 
         # If pattern is not in dictionary, add it
         count = 1
@@ -267,6 +272,8 @@ class Compressor2:
                 return
 
         # self.trim_dictionary()
+        self.trim_dictionary_nn()
+
 
         count = 1
         score = self.get_score(pattern, count)
@@ -435,9 +442,9 @@ class Compressor2:
             for line in f:
                 line_count += 1
                 edge_count += 1
-                # if (line_count % 1000 == 0):
-                #     # print("Read %d lines (%d edges) from %s" %
-                #     #       (line_count, edge_count, fin), file=stderr, end='\n')
+                if (line_count % 100 == 0):
+                    print("Read %d lines (%d edges) from %s" %
+                          (line_count, edge_count, fin), file=stderr, end='\r')
 
 
                 # Add the vertex/edge to our graph stream object (G_batch)
@@ -448,9 +455,9 @@ class Compressor2:
                     continue
 
                 # print(f"Continue Process => line: {line_count}, edge count: {edge_count} time stamp: {self._time_stamp}")
-                if(self.P.__len__() >= self.dict_size):
-                    print("Pattern size -> ", self.P.__len__())
-                    self.P = self.pattern_pruner()
+                # if(self.P.__len__() >= self.dict_size):
+                #     print("Pattern size -> ", self.P.__len__())
+                #     self.P = self.pattern_pruner()
                 # Processed the batch, then create a fresh stream object/graph
                 self.iterate_batch(G_batch)
                 self._time_stamp += 1
