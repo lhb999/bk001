@@ -579,7 +579,7 @@ if(is_directed):
  di = "directed"
 else:
  di = "un_directed"
-
+z
 
 # print
 # n, "Bytes"  # 바이트 단

@@ -391,8 +391,7 @@ class Compressor:
             # Generic parsing problem
             raise ValueError("Error: could not parse line:\n%s" % raw)
 
-# file8 = 'data/SUBGEN/4PATH/100K.graph'
-file9 = 'data/SUBGEN/4PATH/10K.graph'
+
 
 def write_dictionary(model, fout=None):
     """ Print the pattern dictionary in readable .graph format
@@ -419,6 +418,11 @@ def write_dictionary(model, fout=None):
                 fout.write("e %d %d %d\n" %
                            (e.source, e.target, e['label']))
 
+# file8 = 'data/SUBGEN/4PATH/100K.graph'
+# file9 = 'data/SUBGEN/4PATH/10K.graph'
+file9 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
+# C:\Users\lhb\PycharmProjects\bk001\data\SUBGEN\4PATH\4PATH_1_5_50cx.graph
+
 import time
 import os
 
@@ -428,7 +432,7 @@ sizes = [5, 7, 10, 12, 14, 16, 18, 20]
 # n, "Bytes"  # 바이트 단
 for size in sizes:
     start = time.time()  # 시작 시간 저장
-    for test_case in range(5):
+    for test_case in range(1):
         fname = f"test_a_{size}_{test_case}.out"
         comp4 = Compressor(batch_size=200, dict_size=size)
         comp4.compress_file(file9)
