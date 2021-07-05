@@ -554,7 +554,7 @@ def write_dictionary(model, fout=None):
 import time
 import os
 
-sizes = [2,4,6,8,10,12,14]
+sizes = [2, 4, 6, 8, 10, 12, 14]
 
 file7 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
 file8 = 'data/SUBGEN/4PATH/100K.graph'

@@ -430,7 +430,7 @@ test_file = file7
 import time
 import os
 
-sizes = [2,4,6,8,10,12,14]
+sizes = [2, 4, 6, 8, 10, 12, 14]
 
 # print
 # n, "Bytes"  # 바이트 단
