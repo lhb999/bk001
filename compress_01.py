@@ -404,7 +404,7 @@ class Compressor2:
 
             for line in f:
                 line_count += 1
-                print(line_count)
+                # print(line_count)
                 # if (line_count % 1000 == 0):
                 #     # print("Read %d lines (%d edges) from %s" %
                 #     #       (line_count, edge_count, fin), file=stderr, end='\n')
@@ -443,7 +443,7 @@ class Compressor2:
         Note: we still need the id->label mapping of the vertex to proceed
         """
         try:
-            print(source)
+            # print(source)
             graph.vs.find(name=source)
         except ValueError:
             graph.add_vertex(source, label=self.vid_to_label[source])
@@ -554,14 +554,14 @@ def write_dictionary(model, fout=None):
 import time
 import os
 
-sizes = [5]
+sizes = [2,4,6,8,10,12,14]
 
 file7 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
 file8 = 'data/SUBGEN/4PATH/100K.graph'
 file9 = 'data/SUBGEN/4PATH/merge_10k.txt'
 file1 = 'splited_0.txt'
 
-test_file = file1
+test_file = file7
 # print
 # n, "Bytes"  # 바이트 단
 for size in sizes:

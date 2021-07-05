@@ -418,15 +418,19 @@ def write_dictionary(model, fout=None):
                 fout.write("e %d %d %d\n" %
                            (e.source, e.target, e['label']))
 
-# file8 = 'data/SUBGEN/4PATH/100K.graph'
-# file9 = 'data/SUBGEN/4PATH/10K.graph'
-file9 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
-# C:\Users\lhb\PycharmProjects\bk001\data\SUBGEN\4PATH\4PATH_1_5_50cx.graph
 
+
+file7 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
+file8 = 'data/SUBGEN/4PATH/100K.graph'
+file9 = 'data/SUBGEN/4PATH/merge_10k.txt'
+file1 = 'splited_0.txt'
+
+test_file = file7
+# print
 import time
 import os
 
-sizes = [5, 7, 10, 12, 14, 16, 18, 20]
+sizes = [2,4,6,8,10,12,14]
 
 # print
 # n, "Bytes"  # 바이트 단
@@ -434,8 +438,8 @@ for size in sizes:
     start = time.time()  # 시작 시간 저장
     for test_case in range(1):
         fname = f"test_a_{size}_{test_case}.out"
-        comp4 = Compressor(batch_size=200, dict_size=size)
-        comp4.compress_file(file9)
+        comp4 = Compressor(batch_size=100, dict_size=size)
+        comp4.compress_file(test_file)
         with open(fname, 'w') as fout:
             write_dictionary(comp4, fout)
     n = os.path.getsize(fname)
