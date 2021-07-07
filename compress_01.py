@@ -15,6 +15,7 @@ from igraph import Graph
 import pyfpgrowth
 from itertools import chain
 # from .visualize import visualize_separate, visualize_grid
+import timer
 
 class Compressor2:
     """ Parameters and state of the GraphZip model """
@@ -23,7 +24,6 @@ class Compressor2:
         """ Initialize state and set parameters """
         # Should remain constant
         self._directed = directed
-
         # For keeping track of internal stats
         self._compress_count = 0
         self._lines_read = 0
@@ -33,6 +33,7 @@ class Compressor2:
         self._time_stamp = 0
         self._pattern_from = {}
         self._pattern_id_inc = 0
+        self.timer = timer.TimeTimer(check_with_print=True)
 
         # Max dictionary size. If we go over size, keep only the top patterns
         self.dict_size = dict_size
@@ -66,6 +67,29 @@ class Compressor2:
 
         # Initialize patterns list P of (graph,count,score) tuples
         self.P = []
+
+    def print_vs(self, g3):
+        for v in g3.vs:
+            print(v)
+
+    def print_vn(self, g3):
+        for v in g3.vs:
+            print(v['name'])
+
+    def print_es(self, g3):
+        for e in g3.es:
+            print(e)
+
+    def print_ven_st(self, g3, src, tgt):
+        print(f"{src} -> {tgt}")
+        self.print_vs(g3)
+        self.print_es(g3)
+        self.print_vn(g3)
+
+    def print_ven(self, g3):
+        self.print_vs(g3)
+        self.print_es(g3)
+        self.print_vn(g3)
 
     def append_expanded_pattern(self, j, k):
         if(j != k):
@@ -254,6 +278,7 @@ class Compressor2:
     def iterate_batch(self, G_batch):
         """ `Compress` a single graph stream object G_batch """
 
+
         if len(G_batch.es) == 0:
             return
         taken = defaultdict(lambda: False)  # XXX move to under vmap in maps?
@@ -263,6 +288,9 @@ class Compressor2:
         new_patterns = []
 
         # For each pattern-graph p in P
+
+        self.timer.check_time("start")
+
         for i, (pid, p, c, s) in enumerate(self.P):
 
             # Get all subgraphs matching pattern p in the batch's graph
@@ -282,6 +310,7 @@ class Compressor2:
             # For each instance of i of p in B
             # 'vmap' is a mapping of p's vertex indices to G's v. indices
             counter = 0
+            # print("1")
             for v_map in maps:
                 counter += 1
 
@@ -358,10 +387,17 @@ class Compressor2:
                                                    pv_target_index):
                                 if p_new is None:
                                     p_new = p.copy()
-                                self.safe_add_edge(p_new,
-                                                   pv_source_index,
-                                                   pv_target_index,
-                                                   label=Ge['label'])
+                                # print(f"{pv_source_index} -> {pv_target_index}")
+                                # self.print_vs(p_new)
+                                # print("1")
+                                p_new.add_edge(pv_source_index,
+                                               pv_target_index,
+                                               label=Ge['label'])
+                                # print("2")
+                                # self.safe_add_edge(p_new,
+                                #                    pv_source_index,
+                                #                    pv_target_index,
+                                #                    label=Ge['label'])
 
                         # Third possibility is that the edge exists in both the
                         # pattern and the larger (batch) graph (do nothing)
@@ -374,9 +410,13 @@ class Compressor2:
                     new_patterns.append((p_new, pid))
                     # new_patterns.append(p_new)
 
+        self.timer.check_time("after pattern expand")
+
         for (g, ii) in new_patterns:
             # self.update_dictionary(g)
             self.update_dictionary_idx(g, ii)
+
+        self.timer.check_time("update dictionary")
 
         # Add remaining edges in B as single-edge patterns in P
         for e in G_batch.es:
@@ -389,6 +429,8 @@ class Compressor2:
                 single_edge.add_vertex(label=target['label'])
                 single_edge.add_edge(0, 1, label=e['label'])
                 self.update_dictionary(single_edge)
+
+        self.timer.check_time("update single edge")
 
     def compress_file(self, fin, fout=None):
         """ Run GraphZip on a graph specified by an input (.graph) file
@@ -405,9 +447,9 @@ class Compressor2:
             for line in f:
                 line_count += 1
                 # print(line_count)
-                # if (line_count % 1000 == 0):
-                #     # print("Read %d lines (%d edges) from %s" %
-                #     #       (line_count, edge_count, fin), file=stderr, end='\n')
+                if (line_count % 100 == 0):
+                    print("Read %d lines (%d edges) from %s" %
+                          (line_count, edge_count, fin), file=stderr, end='\n')
                 if line[0] == 'e':
                     edge_count += 1
 
@@ -443,7 +485,6 @@ class Compressor2:
         Note: we still need the id->label mapping of the vertex to proceed
         """
         try:
-            # print(source)
             graph.vs.find(name=source)
         except ValueError:
             graph.add_vertex(source, label=self.vid_to_label[source])
@@ -492,6 +533,8 @@ class Compressor2:
                 if not G_batch.are_connected(e_source_id, e_dest_id):
                     # We can only add an edge if the vertices already exist
                     if self.add_implicit_vertices:
+                        # print("1")
+                        # self.print_ven(G_batch, e_source_id, e_dest_id)
                         self.safe_add_edge(G_batch,
                                            e_source_id,
                                            e_dest_id,
@@ -505,6 +548,8 @@ class Compressor2:
             except ValueError:
                 # We can only add an edge if the vertices already exist
                 if self.add_implicit_vertices:
+                    # print("2")
+                    # self.print_ven(G_batch, e_source_id, e_dest_id)
                     self.safe_add_edge(G_batch,
                                        e_source_id, e_dest_id, label=e_label)
                 else:
@@ -554,14 +599,14 @@ def write_dictionary(model, fout=None):
 import time
 import os
 
-sizes = [2, 4, 6, 8, 10, 12, 14]
+sizes = [10]
 
 file7 = 'data/SUBGEN/4PATH/4PATH_1_5_50cx.graph'
 file8 = 'data/SUBGEN/4PATH/100K.graph'
 file9 = 'data/SUBGEN/4PATH/merge_10k.txt'
 file1 = 'splited_0.txt'
 
-test_file = file7
+test_file = file1
 # print
 # n, "Bytes"  # 바이트 단
 for size in sizes:

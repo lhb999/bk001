@@ -237,6 +237,9 @@ class Compressor:
                                                    pv_target_index):
                                 if p_new is None:
                                     p_new = p.copy()
+                                p_new.add_edge(pv_source_index,
+                                               pv_target_index,
+                                               label=Ge['label'])
                                 self.safe_add_edge(p_new,
                                                    pv_source_index,
                                                    pv_target_index,
